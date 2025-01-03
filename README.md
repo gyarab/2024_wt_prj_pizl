@@ -15,5 +15,5 @@ V hlavním menu bude odkaz na stránku s produkty, stránku "O nás" s informace
 
 ## Wireframes
 
-![Máme pro vás dravé řešení](https://edgering.org/markdown/img/lion.jpg)
+![Máme pro vás dravé řešení](odkaz pov)
 
