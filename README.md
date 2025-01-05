@@ -15,5 +15,5 @@ V hlavním menu budou produkty a filtry na produkty po rozkliknuti produkti se z
 
 ## Wireframes
 
-![](odkaz pov)
+![](wireframe.jpg)
 
