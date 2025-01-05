@@ -10,10 +10,10 @@ Databáze Pekárna je webová aplikace sloužící ke správě a zobrazení info
 
 Hlavní stránka obsahuje seznam dostupných produktů, který lze filtrovat podle kategorie a řadit dle ceny nebo abecedně. Kliknutím na konkrétní produkt se uživatel dostane na detail produktu, kde jsou zobrazeny všechny informace o produktu včetně většího obrázku.
 
-V hlavním menu bude odkaz na stránku s produkty, stránku "O nás" s informacemi o pekárně a stránku "Kontakt". Součástí bude vyhledávací lišta, která umožní rychlé nalezení produktu dle názvu nebo popisu.
+V hlavním menu budou produkty a filtry na produkty po rozkliknuti produkti se zobrazi veci o nem, cena, atd.
 
 
 ## Wireframes
 
-![Máme pro vás dravé řešení](odkaz pov)
+![](odkaz pov)
 
