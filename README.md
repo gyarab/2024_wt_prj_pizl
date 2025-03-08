@@ -17,3 +17,8 @@ V hlavním menu budou produkty a filtry na produkty po rozkliknuti produkti se z
 
 ![](wireframe.jpg)
 
+
+
+## DB schema
+
+![](DBschema.jpg)
