@@ -1,65 +1,64 @@
 import httpx
 
-url = "https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt?date=13.02.2025"
-r = httpx.get(url)
-
-# print(r.text)
-
-lines = r.text.split("\n")
-
-row = ""
-for line in lines:
-    if "|EUR|" in line:
-        row = line
-        
-# print(row)
-
-row_arr = row.split("|")
-
-kurz_str = row_arr[-1]
-kurz_str = kurz_str.replace(",", ".")
-
-kurz = float(kurz_str)
-# print(kurz)
-
-while(1):
-    mode = input("Zadej mód převodu: 1 = CZK na EUR, 2 = EUR na CZK\n")
-    
-    if mode == '1':
-        currency = "CZK"
-        break
-    
-    elif mode == '2':
-        currency = "EUR"
-        break
-    else:
-        print("Nepovolená hodnota, prosím zadejte jinou.")
-        mode = 0
-        
-
-while(1):
-    value_str = input("Zadej hodnotu " + currency + " pro převedení: \n")
-    
+def ziskej_kurz():
+    url = "https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/denni_kurz.txt"
     try:
-        value = float(value_str)
-        break
-    except:
-        print("Nepovolená hodnota, prosím zadejte jinou.")
-        value = 0    
+        response = httpx.get(url)
+        
+        if response.status_code != 200:
+            return None
+        
+        data = response.text.split("\n")
+        
+        for radek in data:
+            if "|EUR|" in radek:
+                casti = radek.split("|")
+                if len(casti) >= 5:
+                    kurz = casti[-1].replace(",", ".")
+                    return float(kurz)
+        
+        return None
+    except Exception:
+        return None
 
-
-while(1):
-           
-    
-    if mode == '1':
-        result = value / kurz
-        print(f"Výsledek je {result} EUR")
-        break
-    elif mode == '2':
-        result = value * kurz
-        print(f"Výsledek je {result} CZK")
-        break
+def prepocitej_castku(castka, kurz, smer):
+    if smer == "CZK->EUR":
+        return castka / kurz, "EUR"
     else:
-        print("Nepovolená hodnota, prosím zadejte jinou.")
-        value = 0
-        break
+        return castka * kurz, "CZK"
+
+def ziskej_vstup(text, moznosti=None):
+    while True:
+        vstup = input(text).strip()
+        if moznosti and vstup not in moznosti:
+            print("Neplatná volba, zkuste znovu.")
+        else:
+            return vstup
+
+def main():
+    kurz = ziskej_kurz()
+    if kurz is None:
+        return
+    print(f"Aktuální kurz EUR/CZK: {kurz:.2f}")
+    
+    smer = ziskej_vstup("Vyberte převod (1 = CZK na EUR, 2 = EUR na CZK): ", ["1", "2"])
+    
+    if smer == "1":
+        mena = "CZK"
+        smer_text = "CZK->EUR"
+    else:
+        mena = "EUR"
+        smer_text = "EUR->CZK"
+    
+    while True:
+        try:
+            castka = float(input(f"Zadejte částku v {mena}: "))
+            break
+        except ValueError:
+            print("Neplatná hodnota, zkuste znovu.")
+    
+    vysledek, cilova_mena = prepocitej_castku(castka, kurz, smer_text)
+    print(f"Výsledek: {vysledek:.2f} {cilova_mena}")
+
+if __name__ == "__main__":
+    main()
