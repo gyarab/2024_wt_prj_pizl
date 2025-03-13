@@ -1,9 +1,99 @@
 {% extends 'main/base.html' %}
 
-
 {% block content %}
-<h1>
-    Two
-</h1>
-<p>YES </p>
+<div class="container mt-4">
+    <h2>Recepty na naše pečivo</h2>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Recept na Chléb</h5>
+                    <h6>Ingredience:</h6>
+                    <ul>
+                        <li>500 g pšeničné mouky</li>
+                        <li>300 ml vody</li>
+                        <li>10 g soli</li>
+                        <li>7 g suchého droždí</li>
+                    </ul>
+                    <h6>Postup:</h6>
+                    <p>1. Smíchejte všechny ingredience a vypracujte těsto. <br>
+                    2. Nechte kynout 1 hodinu. <br>
+                    3. Pečte na 220°C po dobu 30 minut.</p>
+                    <a href="#" class="btn btn-primary">Zobrazit celý recept</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Recept na Rohlíky</h5>
+                    <h6>Ingredience:</h6>
+                    <ul>
+                        <li>400 g hladké mouky</li>
+                        <li>200 ml mléka</li>
+                        <li>50 g másla</li>
+                        <li>10 g cukru</li>
+                    </ul>
+                    <h6>Postup:</h6>
+                    <p>1. Smíchejte všechny ingredience a vypracujte těsto. <br>
+                    2. Nechte kynout 45 minut. <br>
+                    3. Tvarujte rohlíky a pečte na 200°C po dobu 15 minut.</p>
+                    <a href="#" class="btn btn-primary">Zobrazit celý recept</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Recept na Koláče</h5>
+                    <h6>Ingredience:</h6>
+                    <ul>
+                        <li>500 g tvarohu</li>
+                        <li>200 g mouky</li>
+                        <li>100 g másla</li>
+                        <li>50 g cukru</li>
+                    </ul>
+                    <h6>Postup:</h6>
+                    <p>1. Vypracujte těsto a nechte ho odpočívat. <br>
+                    2. Naplňte koláče tvarohem a pečte na 180°C po dobu 25 minut.</p>
+                    <a href="#" class="btn btn-primary">Zobrazit celý recept</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h3>Tipy pro domácí pečení</h3>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Jak správně kynout těsto</h5>
+                    <p>Před kynutím těsto dobře propracujte a nechte ho v teple. Pokud máte studený prostor, dejte těsto na chvíli do trouby na nízkou teplotu.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Jak docílit křupavé kůrky</h5>
+                    <p>Před pečením potřete chléb vodou nebo jej postříkejte. Takto docílíte krásné, křupavé kůrky.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Skladování pečiva</h5>
+                    <p>Pečivo skladujte v papírovém sáčku nebo na suchém a chladném místě, aby vydrželo co nejdéle čerstvé.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
