@@ -1,0 +1,7 @@
+- model: main.pecivo
+  pk: 1
+  fields:
+    jmeno: Chleba
+    popis: Chleba je peèivo kulatého tvaru
+    cena: 10.0
+    kategorie: 1
