@@ -1,0 +1,20 @@
+- model: main.kategorie
+  pk: 1
+  fields:
+    jmeno: Rohlík
+- model: main.kategorie
+  pk: 2
+  fields:
+    jmeno: Chleba
+- model: main.kategorie
+  pk: 3
+  fields:
+    jmeno: Sladkost
+- model: main.kategorie
+  pk: 4
+  fields:
+    jmeno: Slané pečivo
+- model: main.kategorie
+  pk: 5
+  fields:
+    jmeno: Bezlepek
