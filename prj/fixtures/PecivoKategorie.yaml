@@ -1,0 +1,5 @@
+- model: main.pecivokategorie
+  pk: 1
+  fields:
+    kategorie: 2
+    pecivo: 1

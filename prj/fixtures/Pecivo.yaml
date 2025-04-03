@@ -1,7 +1,10 @@
 - model: main.pecivo
   pk: 1
   fields:
-    jmeno: Chleba
-    popis: Chleba je pe�ivo kulat�ho tvaru
-    cena: 10.0
-    kategorie: 1
+    jmeno: Celozrný Chléb
+    popis: Celozrnný chléb je výživný druh pečiva vyrobený z celozrnné mouky, která
+      obsahuje všechny části obilného zrna včetně otrub a klíčků. Má tmavší barvu,
+      hutnější strukturu a jemně oříškovou chuť. Díky vysokému obsahu vlákniny, vitamínů
+      a minerálů podporuje zdravé trávení a dodává energii na delší dobu.
+    cena: 45.0
+    kategorie: 2
