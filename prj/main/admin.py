@@ -3,10 +3,10 @@ from .models import Pecivo, Kategorie, Recept, PecivoKategorie
 
 
 class PecivoAdmin(admin.ModelAdmin):
-    list_display = ["jmeno","popis","cena", "kategorie"]
+    list_display = ["jmeno","popis","cena", "kategorie","obrazek_url"]
 
 class KategorieAdmin(admin.ModelAdmin):
-    list_display = ["jmeno"]
+    list_display = ["jmeno","cislo_kategorie"]
 
 class ReceptAdmin(admin.ModelAdmin):
     list_display = ["jmeno","recept","kategorie"]

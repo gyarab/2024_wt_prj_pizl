@@ -2,18 +2,16 @@ from django.shortcuts import render
 from .models import Pecivo
 
 def get_homepage(request):
+    pecivos = Pecivo.objects.prefetch_related('pecivokategorie_set__kategorie').all()
+
+    if request.GET.get("search"):
+        search_term = request.GET.get("search")
+        print("SEARCH", search_term)
+        pecivos = Pecivo.objects.filter(jmeno__icontains=search_term)
+
     context = {
         "svatek": "Marek",
-        "pecivo": Pecivo.objects.all().order_by('jmeno') [:10]
+        "pecivos": pecivos
     }
 
-    print("HOST",request.get_host())
-    
-    if(request.GET.get("search")):
-        print("SEARCH",request.GET.get("search"))
-        pecivo = pecivo.filtet(title__contains=request.GET.get("search"))
-
-
-    return render(
-        request, "main/homepage.html", context
-        )
+    return render(request, "main/homepage.html", context)

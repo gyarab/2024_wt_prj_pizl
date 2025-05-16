@@ -18,3 +18,62 @@
   pk: 5
   fields:
     jmeno: Bezlepek
+- model: main.kategorie
+  pk: 6
+  fields:
+    jmeno: Bez cukru
+    cislo_kategorie: 6
+
+- model: main.kategorie
+  pk: 7
+  fields:
+    jmeno: Sýrové pečivo
+    cislo_kategorie: 7
+
+- model: main.kategorie
+  pk: 8
+  fields:
+    jmeno: Víkendové pečivo
+    cislo_kategorie: 8
+
+- model: main.kategorie
+  pk: 9
+  fields:
+    jmeno: Plněné
+    cislo_kategorie: 9
+
+- model: main.kategorie
+  pk: 10
+  fields:
+    jmeno: Sezónní
+    cislo_kategorie: 10
+
+- model: main.kategorie
+  pk: 11
+  fields:
+    jmeno: Slané tyčinky
+    cislo_kategorie: 11
+
+- model: main.kategorie
+  pk: 12
+  fields:
+    jmeno: Chléb se semínky
+    cislo_kategorie: 12
+
+- model: main.kategorie
+  pk: 13
+  fields:
+    jmeno: Sendvičové
+    cislo_kategorie: 13
+
+- model: main.kategorie
+  pk: 14
+  fields:
+    jmeno: Mini pečivo
+    cislo_kategorie: 14
+
+- model: main.kategorie
+  pk: 15
+  fields:
+    jmeno: Trvanlivé
+    cislo_kategorie: 15

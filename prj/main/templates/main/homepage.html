@@ -1,15 +1,84 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-4">
     <h1>Homepage</h1>
-    <p>Dnes ma svatek {{svatek}}</p>
+    <p>Dnes má svátek {{ svatek }}</p>
 
-    {% for pecivo in pecivos %}
-        <h2> {{pecivo.jmeno}} ({{pecivo.cena}})</h2>
-        <h3> {{pecivo.popis}}</h3>
+    <!-- Vyhledávání -->
+    <form method="get" action=".">
+        <div class="input-group mb-3">
+            <input 
+                type="text" 
+                name="search" 
+                value="{{ request.GET.search }}" 
+                class="form-control" 
+                placeholder="Hledat pečivo..." 
+                aria-label="Hledat pečivo"
+            >
+            {% if request.GET.category %}
+                <input type="hidden" name="category" value="{{ request.GET.category }}">
+            {% endif %}
+            <button class="btn btn-outline-secondary" type="submit">Hledat</button>
+        </div>
+    </form>
 
-    {% endfor %}
+    <!-- Kategorie - vysouvací panel -->
+    <div class="mb-3">
+        <button class="btn btn-outline-primary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#kategoriePanel" aria-expanded="false" aria-controls="kategoriePanel">
+            Kategorie
+        </button>
+        <div class="collapse" id="kategoriePanel">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class="btn {% if not request.GET.category %}btn-primary{% else %}btn-outline-secondary{% endif %}" 
+                       href="?{% if request.GET.search %}search={{ request.GET.search }}{% endif %}">
+                        Vše
+                    </a>
+                </li>
+                {% for kat in kategorie %}
+                <li class="list-inline-item">
+                    <a class="btn {% if request.GET.category|default:'' == kat.id|stringformat:"s" %}btn-primary{% else %}btn-outline-secondary{% endif %}"
+                       href="?category={{ kat.id }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">
+                        {{ kat.jmeno }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Výpis pečiva -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        {% for pecivo in pecivos %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                {% if pecivo.obrazek_url %}
+                <img src="{{ pecivo.obrazek_url }}" class="card-img-top" alt="Obrázek {{ pecivo.jmeno }}" style="max-height: 200px; object-fit: cover;">
+                {% else %}
+                <img src="https://via.placeholder.com/300x200?text=Obrazek+chybi" class="card-img-top" alt="Žádný obrázek">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ pecivo.jmeno }}</h5>
+
+                    <div class="mb-2">
+                        {% for pk in pecivo.pecivokategorie_set.all %}
+                        <span class="badge bg-secondary">{{ pk.kategorie.jmeno }}</span>
+                        {% endfor %}
+                    </div>
+                    
+
+                    <p class="card-text flex-grow-1">{{ pecivo.popis|truncatewords:20 }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-success fw-bold">{{ pecivo.cena }} Kč</span>
+                        <a href="#" class="btn btn-primary btn-sm">Nakup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Žádné pečivo nebylo nalezeno.</p>
+        {% endfor %}
+    </div>
 </div>
-
 {% endblock %}
