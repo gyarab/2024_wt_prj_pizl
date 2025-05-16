@@ -2,36 +2,24 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1>Homepage</h1>
-    <p>Dnes má svátek {{ svatek }}</p>
-
-    <!-- Vyhledávání -->
+    <h1>Pečivo</h1>
+    <!-- Formulář pro vyhledávání -->
     <form method="get" action=".">
         <div class="input-group mb-3">
-            <input 
-                type="text" 
-                name="search" 
-                value="{{ request.GET.search }}" 
-                class="form-control" 
-                placeholder="Hledat pečivo..." 
-                aria-label="Hledat pečivo"
-            >
-            {% if request.GET.category %}
-                <input type="hidden" name="category" value="{{ request.GET.category }}">
-            {% endif %}
-            <button class="btn btn-outline-secondary" type="submit">Hledat</button>
+            <input type="text" name="search" class="form-control" placeholder="Hledat pečivo..." value="{{ request.GET.search }}">
+            <button type="submit" class="btn btn-primary">Hledat</button>
         </div>
     </form>
 
-    <!-- Kategorie - vysouvací panel -->
+    <!-- Tlačítko Kategorie a collapsible panel mimo formulář -->
     <div class="mb-3">
-        <button class="btn btn-outline-primary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#kategoriePanel" aria-expanded="false" aria-controls="kategoriePanel">
+        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#kategoriePanel" aria-expanded="false" aria-controls="kategoriePanel">
             Kategorie
         </button>
-        <div class="collapse" id="kategoriePanel">
+        <div class="collapse mt-2" id="kategoriePanel">
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class="btn {% if not request.GET.category %}btn-primary{% else %}btn-outline-secondary{% endif %}" 
+                    <a class="btn {% if not request.GET.category %}btn-primary{% else %}btn-outline-secondary{% endif %}"
                        href="?{% if request.GET.search %}search={{ request.GET.search }}{% endif %}">
                         Vše
                     </a>
@@ -62,11 +50,10 @@
                     <h5 class="card-title">{{ pecivo.jmeno }}</h5>
 
                     <div class="mb-2">
-                        {% for pk in pecivo.pecivokategorie_set.all %}
-                        <span class="badge bg-secondary">{{ pk.kategorie.jmeno }}</span>
-                        {% endfor %}
+                        {% if pecivo.kategorie %}
+                            <span class="badge bg-secondary">{{ pecivo.kategorie.jmeno }}</span>
+                        {% endif %}
                     </div>
-                    
 
                     <p class="card-text flex-grow-1">{{ pecivo.popis|truncatewords:20 }}</p>
                     <div class="d-flex justify-content-between align-items-center">

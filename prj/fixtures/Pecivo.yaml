@@ -2,7 +2,7 @@
   pk: 1
   fields:
     jmeno: Celozrnný Chléb
-    popis: Celozrnný chléb je výživný druh pečiva vyrobený z celozrnné mouky, která obsahuje všechny části obilného zrna včetně otrub a klíčků. Má tmavší barvu, hutnější strukturu a jemně oříškovou chuť. Díky vysokému obsahu vlákniny, vitamínů a minerálů podporuje zdravé trávení a dodává energii na delší dobu.
+    popis: Celozrnný chléb je výživný druh pečiva...
     cena: 45
     kategorie: 2
     obrazek_url: "https://cdn.myshoptet.com/usr/www.malinova.cz/user/shop/big/272_chleb-celozrnny-500g.jpg?5e4c419f"
@@ -11,16 +11,16 @@
   pk: 2
   fields:
     jmeno: Slunečnicová Bageta
-    popis: Slunečnicová bageta je křupavé pečivo posypané slunečnicovými semínky a upečené dozlatova. Díky těmto semínkům má jemně oříškovou chuť a vyšší obsah zdravých tuků. Skvěle se hodí ke snídani nebo jako příloha k salátu.
+    popis: Slunečnicová bageta je křupavé pečivo...
     cena: 25
-    kategorie: 1
+    kategorie: 16
     obrazek_url: "https://www.eta.cz/tadyjedoma/images/cz/uploader/files/Recepty/Slune%C4%8Dnicov%C3%A9%20bagety%20%20I.jpg"
 
 - model: main.pecivo
   pk: 3
   fields:
     jmeno: Rohlík
-    popis: Tradiční pšeničný rohlík s křupavou kůrkou a měkkou střídou. Vhodný k snídani, svačině i jako základ pro obložené chlebíčky.
+    popis: Tradiční pšeničný rohlík s křupavou kůrkou...
     cena: 5
     kategorie: 1
     obrazek_url: "https://www.nopek.cz/userfiles/photogallery/big/rohlik-43g__mi001-251.jpg"
@@ -29,70 +29,70 @@
   pk: 4
   fields:
     jmeno: Žitný Chléb
-    popis: Hustý a aromatický chléb z žitné mouky, bohatý na vlákninu. Vydrží dlouho čerstvý a je ideální k sytějším jídlům.
+    popis: Hustý a aromatický chléb z žitné mouky...
     cena: 40
-    kategorie: 1
+    kategorie: 2
     obrazek_url: "https://recepty.cuketka.cz/media/recipe/main_imgs/zitny_chleb_1_2048_60.jpg"
 
 - model: main.pecivo
   pk: 5
   fields:
     jmeno: Máslový Croissant
-    popis: Nadýchaný a vrstvený francouzský croissant s máslovou chutí. Skvělý ke kávě nebo jako luxusní snídaně.
+    popis: Nadýchaný a vrstvený francouzský croissant...
     cena: 22
-    kategorie: 1
+    kategorie: 17
     obrazek_url: "https://www.bb.cz/files/default/600/600/14117-bbd-webprodukt-585x585px-8-20229.jpg"
 
 - model: main.pecivo
   pk: 6
   fields:
     jmeno: Sýrová Houska
-    popis: Měkká houska sypaná strouhaným sýrem, ideální jako svačina nebo příloha k polévce.
+    popis: Měkká houska sypaná strouhaným sýrem...
     cena: 15
-    kategorie: 1
+    kategorie: 7
     obrazek_url: "https://img.kupi.cz/kupi/thumbs/houska-syrova_box_1200_1200.jpg"
 
 - model: main.pecivo
   pk: 7
   fields:
     jmeno: Lněný Chléb
-    popis: Chléb s přídavkem lněných semínek, která podporují trávení a dodávají mu specifickou strukturu a chuť.
+    popis: Chléb s přídavkem lněných semínek...
     cena: 48
-    kategorie: 1
+    kategorie: 2
     obrazek_url: "https://images.cdn.europe-west1.gcp.commercetools.com/1df039f1-4705-4f79-aa90-cf907a6ec063/82-354287-981679996-9b6-4DVM-large.jpg"
 
 - model: main.pecivo
   pk: 8
   fields:
     jmeno: Makovka
-    popis: Sladké kynuté pečivo posypané mákem, ideální k mléku nebo kakau.
+    popis: Sladké kynuté pečivo posypané mákem...
     cena: 12
-    kategorie: 1
+    kategorie: 3
     obrazek_url: "https://images.cdn.europe-west1.gcp.commercetools.com/1df039f1-4705-4f79-aa90-cf907a6ec063/82-317366-974941831-eHC8srP0.jpg"
 
 - model: main.pecivo
   pk: 9
   fields:
     jmeno: Česneková Bageta
-    popis: Bageta ochucená česnekovým máslem, perfektní jako příloha k polévkám nebo na grilování.
+    popis: Bageta ochucená česnekovým máslem...
     cena: 28
-    kategorie: 1
+    kategorie: 16
     obrazek_url: "https://www.pazitka.cz/data_2/7948normal.jpg"
 
 - model: main.pecivo
   pk: 10
   fields:
     jmeno: Špaldový Chléb
-    popis: Výživný chléb ze špaldové mouky, s jemnou oříškovou chutí a vysokým obsahem bílkovin a vlákniny.
+    popis: Výživný chléb ze špaldové mouky...
     cena: 44
-    kategorie: 1
+    kategorie: 2
     obrazek_url: "https://www.rohlik.cz/cdn-cgi/image/f=auto,fit=cover,g=0.5x0.5,w=2900,h=1300/https://cdn.rohlik.cz/images/meals/large/54.jpg"
 
 - model: main.pecivo
   pk: 11
   fields:
     jmeno: Tvarohový Koláč
-    popis: Tradiční český koláč plněný sladkým tvarohem, posypaný drobenkou. Oblíbené sladké pečivo ke kávě nebo čaji.
+    popis: Tradiční český koláč plněný sladkým tvarohem...
     cena: 20
-    kategorie: 1
+    kategorie: 18
     obrazek_url: "https://www.rohlik.cz/cdn-cgi/image/f=auto,fit=cover,g=0.5x0.5,w=2900,h=1300/https://cdn.rohlik.cz/images/meals/large/54.jpg"
