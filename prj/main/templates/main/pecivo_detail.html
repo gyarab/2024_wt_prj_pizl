@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ pecivo.jmeno }}</h2>
+    
+    {% if pecivo.obrazek_url %}
+        <img src="{{ pecivo.obrazek_url }}" alt="{{ pecivo.jmeno }}" class="img-fluid mb-3" style="max-width: 400px;">
+    {% endif %}
+    
+    <p><strong>Kategorie:</strong> {{ pecivo.kategorie.jmeno }}</p>
+    <p><strong>Cena:</strong> {{ pecivo.cena }} Kč</p>
+    <p><strong>Popis:</strong> {{ pecivo.popis }}</p>
+</div>
+
+{% endblock %}

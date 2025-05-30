@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Pecivo, Kategorie
 
 def get_homepage(request):
@@ -20,3 +20,7 @@ def get_homepage(request):
     }
 
     return render(request, "main/homepage.html", context)
+
+def pecivo_detail(request, pk):
+    pecivo = get_object_or_404(Pecivo, pk=pk)
+    return render(request, 'main/pecivo_detail.html', {'pecivo': pecivo})

@@ -58,7 +58,8 @@
                     <p class="card-text flex-grow-1">{{ pecivo.popis|truncatewords:20 }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="text-success fw-bold">{{ pecivo.cena }} Kč</span>
-                        <a href="#" class="btn btn-primary btn-sm">Nakup</a>
+                        <a href="{% url 'pecivo_detail' pecivo.id %}" class="btn btn-primary btn-sm">Více info</a>
+
                     </div>
                 </div>
             </div>
